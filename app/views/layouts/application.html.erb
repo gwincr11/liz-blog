@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LizBlog</title>
+  <title>Liz Foster-Shaner | <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div class="container">
+	<header>
+		<h1>Liz Foster-Shaner</h1>
+		<nav>
+			<ul>
+				<li><%= link_to "Blog", root_path %></li>
+				<li><%= link_to "Academic Portfolio", portfolio_academic_path %></li>
+				<li><%= link_to "Performance Portfolio", portfolio_performance_path %></li>
+				<li><%= link_to "Professional Portfolio", portfolio_proffesional_path %></li>
+			</ul>
+		</nav>
+	</header>
+	<%= yield %>
+</div>
 </body>
 </html>
