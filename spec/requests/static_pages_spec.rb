@@ -22,8 +22,8 @@ describe "StaticPages" do
 
   describe "Home Page" do
   	let!(:blog) { FactoryGirl.create(:blog) }
-	let!(:blog2) { FactoryGirl.create(:blog) }
-	let!(:blog3) { FactoryGirl.create(:blog) }
+	  let!(:blog2) { FactoryGirl.create(:blog) }
+	  let!(:blog3) { FactoryGirl.create(:blog) }
   	before do
   		visit "/"
 
@@ -33,6 +33,7 @@ describe "StaticPages" do
   	it{ should have_content(blog.body) }
   	it { should have_content(blog2.body) }
   	it { should have_content(blog3.body) }
+    it { should have_link(blog.title, href: blog_path(blog))}
 
   	it "should have the proper title" do
   		expect(page).to have_title("#{base_title} | Home")

@@ -6,6 +6,8 @@ LizBlog::Application.routes.draw do
   get "portfolio/performance"
   root "static_pages#home"
   get "/about" => "static_pages#about"
+
+  resources :blog, :only => [:index, :show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
