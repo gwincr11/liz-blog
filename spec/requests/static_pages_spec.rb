@@ -21,19 +21,26 @@ describe "StaticPages" do
   end
 
   describe "Home Page" do
-
+  	let!(:blog) { FactoryGirl.create(:blog) }
+	let!(:blog2) { FactoryGirl.create(:blog) }
+	let!(:blog3) { FactoryGirl.create(:blog) }
   	before do
   		visit "/"
 
   	end
   	subject{ page }
+
+  	it{ should have_content(blog.body) }
+  	it { should have_content(blog2.body) }
+  	it { should have_content(blog3.body) }
+
   	it "should have the proper title" do
   		expect(page).to have_title("#{base_title} | Home")
   	end
 
   end
 
-  describe "Home Page" do
+  describe "About Page" do
   	before do
   		visit "/about"
   	end
