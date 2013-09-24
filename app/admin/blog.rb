@@ -4,4 +4,12 @@ ActiveAdmin.register Blog do
       params.permit(:blog => [:title, :body])
     end
   end
+
+  form do |f|
+	f.inputs "Basic info" do
+	  f.input :title
+	  f.input :body, :as => :rich, :config => { :width => '76%', :height => '400px' }
+	end
+	f.buttons
+  end
 end

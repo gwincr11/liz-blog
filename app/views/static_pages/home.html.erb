@@ -2,5 +2,5 @@
 
 <% @blogs.each do |blog| %>
 	<h1><%= link_to blog.title, blog_path(blog) %></h1>
-	<p><%= blog.body %></p>
+	<p><%= blog.body.html_safe %></p>
 <% end %>
