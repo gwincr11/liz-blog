@@ -2,11 +2,14 @@ LizBlog::Application.routes.draw do
   mount Rich::Engine => '/rich', :as => 'rich'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  get "portfolio/academic"
-  get "portfolio/proffesional"
-  get "portfolio/performance"
+
   root "static_pages#home"
   get "/about" => "static_pages#about"
+
+  get 'portfolio' => 'portfolio#index', as: :portfolio
+  get 'portfolio/category/:id' => 'portfolio#category', as: :portfolio_category
+  get 'portfolio/entry/:id' => 'portfolio#show', as: :portfolio_entry
+
 
   resources :blog, :only => [:index, :show]
   # The priority is based upon order of creation: first created -> highest priority.

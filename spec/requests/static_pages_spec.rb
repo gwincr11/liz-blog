@@ -3,6 +3,7 @@ require 'spec_helper'
 describe "StaticPages" do
 	let(:base_title) { "Liz Foster-Shaner" }
 
+
   describe "Header and nav" do
   	before do
   		visit "/"
@@ -15,9 +16,6 @@ describe "StaticPages" do
   		expect(page).to have_content("Liz Foster-Shaner")
   	end
   	it{ should have_link('Blog')}
-  	it{ should have_link('Academic Portfolio')}
-  	it{ should have_link('Performance Portfolio')}
-  	it{ should have_link('Professional Portfolio')}
   end
 
   describe "Home Page" do

@@ -66,7 +66,7 @@ if Object.const_defined?("Rich")
 	# Inserting these files into your editor will result in a direct (A) link.
 	#
 	# Default:
-	# config.allow_document_uploads = false
+	config.allow_document_uploads = true
 
 	# == Set allowed filetypes for non-image files
 	#
@@ -80,7 +80,7 @@ if Object.const_defined?("Rich")
 	# config.allowed_document_types = :all
 	#
 	# Example, only allow PDF uploads:
-	# config.allowed_document_types = ['application/pdf']
+	config.allowed_document_types = ['application/pdf']
 
 	# == Asset insertion
 	#

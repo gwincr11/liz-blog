@@ -1,10 +1,11 @@
 class PortfolioController < ApplicationController
-  def academic
+  def category
+  	@category = Category.find(params[:id], include: :portfolios)
+  	@entries = @category.portfolios
   end
 
-  def proffesional
+  def show
+  	@entry = Portfolio.find(params[:id])
   end
 
-  def performance
-  end
 end

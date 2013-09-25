@@ -9,13 +9,13 @@
 <body>
 <div class="container">
 	<header>
-		<h1>Liz Foster-Shaner</h1>
+		<h1><%= link_to "Liz Foster-Shaner", root_path %></h1>
 		<nav>
 			<ul>
 				<li><%= link_to "Blog", root_path %></li>
-				<li><%= link_to "Academic Portfolio", portfolio_academic_path %></li>
-				<li><%= link_to "Performance Portfolio", portfolio_performance_path %></li>
-				<li><%= link_to "Professional Portfolio", portfolio_proffesional_path %></li>
+				<% Category.all.each do |cat| %>
+					<li><%= link_to cat.title, portfolio_category_path(cat) %></li>
+				<% end %>
 			</ul>
 		</nav>
 	</header>

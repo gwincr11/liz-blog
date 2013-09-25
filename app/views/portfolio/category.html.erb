@@ -1,0 +1,5 @@
+<h1><%= @category.title %></h1>
+<% @entries.each do |entry| %>
+	<h1><%= link_to entry.title, portfolio_entry_path(entry) %></h1>
+	<%= entry.body.html_safe %>
+<% end %>
